@@ -65,3 +65,46 @@ Gameboy emulator written in C
 
 
     - Implement MBC0, MBC1, MBC3, MBC5
+
+* GPU
+
+    - Emulate PPU modes (OAM search, transfer, H-Blank, V-Blank)
+    - Render background, window and sprites
+    - Start with a pixel buffer -> SDL2 render
+    - Pass Mooneye PPU tests
+
+* Timers and Interrupts
+
+    - Implement DIV, TIMA, TMA, TAC registers
+    - Trigger interrupts at correct cycles
+
+* Input
+    
+    - Joypad register handling (0xFF00)
+    - Map to keyboard/contoller
+
+* Audio (Optional for MVP)
+
+    - Implement APU channels (Square 1, Square 2, Wave, Noise)
+    - Mix to output buffer
+
+* Optimisation & Accuracy
+
+    - Match cycle accuracy
+    - Pass more test ROMs
+
+## Testing
+
+* Use known test ROMs:
+    - Blargg's tests for CPU correctness
+    - Mooneye for edge cases
+    - Gekkio for timing
+
+* Test with a small ROM like Tetris before Pokemon
+
+## Resources
+
+* Pan Docs: https://gbdev.io/pandocs
+* Opcode Table: https://rgbds.gbdev.io/docs/gbz80.7
+* Test ROMs: https://gbdev.io/resources.htm#test-roms
+* Discord: https://gbdev.io/chat
