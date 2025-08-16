@@ -1,5 +1,17 @@
-// The Gameboy has 8kb of work RAM, and 8kb of Video RAM.
-// The Gameboy allows for the use of 65536 address spaces for memory, but not of all of these are available as memory
-// This is because the Gameboy uses Memory Mapped Input/Ouput to talk to its various components, which means they appear to the
-// CPU as if they were memory.
-//  
+#include "memory.h"
+
+// 64KB Game Boy address space
+
+static uint8_t memory[0x10000];
+
+uint8_t read8(uint16_t address) {
+	return memory[address];
+}
+
+void write8(uint16_t address, uint8_t value) {
+	memory[address] = value;
+}
+
+void memory_init() {
+	memory[0x100] = 0x80;
+}
