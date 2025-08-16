@@ -1,0 +1,41 @@
+// 10 Registers: A, B, C, D, E, F, H, L, SP, PC
+//
+// Super fast memory cells physically located inside the cpu, each can hold an 8 bit number, 0- 256
+// Except SP and PC, which can hold 16 bit numbers 0-65535
+//
+// Register F is also different from the other registers, you can't load a value into it apart from some very specific
+// exceptions. However, whenever you perform a maths operation of any kind, register F gets updated with some useful information
+// about the result. The first 4 bits will be flipped if certain things happen during the operation:
+// Bit 7 is set to 1 if the result of the last operation was zero - this is called the 'zero flag'
+// Bit 6 is set to 1 if the last operation was a subtraction - this is called the 'subtract flag'
+// Bit 5 is set to 1 if there was a carry from the lower 4 bits to the higher 4 bits in the last operation, this is the 'half
+// carry flag'
+// Bit 4 is set to 1 if there was a carry from the higher 4 bits in the last operation, or if the A register contained a smaller
+// value when performing a subtraction - this is the 'carry flag'. This directly influences the JP function.
+//
+// A is the most important register, the accumulator, as most mathmatically operations can only be performed on this register
+//
+// The CPU is connected to the work RAM, which is made up of 8kb of storage, 8192 cells that can hold an 8 bit number 0-255,
+// the RAM is much slower than the registers, and most of the CPU's instructions require data to be moved to the registers before
+// any operations can be performed on it
+//
+// The CPU has the ability to perform operations described in the instruction list, these are composed of a text label which
+// identifies them, and one or more operands that change meaning depending on the function.
+// Once the program is ready, all the instructions are converted to numbers and the numbers are saved on a memory chip, and put
+// into a cartridge.
+//
+// Assembly language Instruction examples:
+//
+// LD A,B - This in the load function, it takes the value from the second operand and copies it to the first.
+//
+// ADD A, 27 - This function is used for addition, it adds the second operand to the first. The second operand can be a number,
+// a register, or a memory location.
+// This demonstrates how the A register is special, because the first operand must always be A, the cpu does not perform
+// additions on anything else. If you have to sum a few things together, you have to shuffle them between memory and registers.
+//
+// JP NZ, 8000H - This is the jump instruction, the first operand is a comparison, and the second operand is the address
+// of the next instruction to execute in case the condition is verified. The example here tells the CPU to jump to address 
+// 8000 hex, if the result of the previous instruction is not zero (NZ)
+//
+// HALT - This instruction paused the CPUs before a new screen refresh is complete or other timers wake it up. This helps to
+// improve battery life because the CPU does not run until it needs to.
