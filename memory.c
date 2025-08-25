@@ -41,5 +41,8 @@ void memory_init() {
 	memset(io, 0, sizeof(io));
 	hram[0x7F-1] = 0;
 	ie = 0;
+	memory[0x100] = 0x80;
+	memory[0x101] = 0x04;
+	memory[0x102] = 0x05;
 }
 

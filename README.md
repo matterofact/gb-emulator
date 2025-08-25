@@ -41,7 +41,7 @@ Gameboy emulator written in C
 ## To Do
 
 * Skeleton
-    - Create basic main loop
+    ~~- Create basic main loop~~
     - stub CPU, memory, GPU and input interfaces
 
 * CPU Core
@@ -50,7 +50,7 @@ Gameboy emulator written in C
     - start with no timing accuracy, just correctness
 
 * Memory & Mappers
-    - Emulate memory map:
+    ~~- Emulate memory map:~~
 
 
     0000-3FFF: ROM Bank 0
