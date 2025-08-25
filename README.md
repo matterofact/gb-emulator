@@ -56,15 +56,15 @@ Gameboy emulator written in C
 
 * **NOTE: Need to find out how to emulate the memory map completely - at the moment it is only emulating a single 16kb block of 'memory', but is not segmenting it out into functions**
 
-    0000-3FFF: ROM Bank 0
-    4000-7FFF: Switchable ROM Bank
-    8000-9FFF: VRAM
-    A000-BFFF: External RAM
-    C000-DFFF: WRAM
-    FE00-FE9F: OAM
-    FF00-FF7F: I/O Registers
-    FF80-FFFE: HRAM
-    FFFF: Interrupt Enable
+    - 0000-3FFF: ROM Bank 0
+    - 4000-7FFF: Switchable ROM Bank
+    - 8000-9FFF: VRAM
+    - A000-BFFF: External RAM
+    - C000-DFFF: WRAM
+    - FE00-FE9F: OAM
+    - FF00-FF7F: I/O Registers
+    - FF80-FFFE: HRAM
+    - FFFF: Interrupt Enable
 
 
     - Implement MBC0, MBC1, MBC3, MBC5
