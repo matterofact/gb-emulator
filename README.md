@@ -47,6 +47,7 @@ Gameboy emulator written in C
 * CPU Core
     - Implement opcodes **<- currently progressing with this stage in cpu.c**
     - Implement registers and flag bits (Z, N, H, C)
+    - Implement u16 registers e.g BC, HL, and op codes that pass arbitrary registers as args e.g r8, r16, etc.
     - Implement instruction fetch/decode/execute cycle
     - start with no timing accuracy, just correctness
 
@@ -67,6 +68,11 @@ Gameboy emulator written in C
 
 
     - Implement MBC0, MBC1, MBC3, MBC5
+
+* ROM
+
+    - Emulate the loading of a ROM into memory
+    - Print out Title, Licensee, etc info from ROM to prove working
 
 * GPU
 
